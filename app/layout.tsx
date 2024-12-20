@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Theme from "./Theme";
+import AntdV5MonkeyPatch from "./AntdV5MonkeyPatch";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,6 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className} style={{ margin: 0 }}>
+        <AntdV5MonkeyPatch />
         <Theme>{children}</Theme>
       </body>
     </html>
